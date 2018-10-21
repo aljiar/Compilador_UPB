@@ -14,7 +14,7 @@ public class LexicoCompilador {
 				"Si", "Entonces", "FinSi",
 				"Para", "FinPara", "Mientras", "FinMientras",
 				"Entero", "Decimal", "Cadena", "Funcion", 
-				"FinFuncion", "Retorno", "Mostrar", "Verdadero", "sFalso"));
+				"FinFuncion", "Retorno", "Mostrar", "Verdadero", "Falso"));
 		tamPR=palabrasReservadas.size();
 		
 	}
