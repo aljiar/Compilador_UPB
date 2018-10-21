@@ -6,14 +6,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-public class Main_Compilador {
+public class MainCompilador {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		test();
 	}
 	public static void test() throws FileNotFoundException, IOException {
-		Lexico_Compilador tknCS;
-		tknCS = new Lexico_Compilador();
+		LexicoCompilador tknCS;
+		tknCS = new LexicoCompilador();
 		ArrayList<String> cadena = new ArrayList<String>();
 		String txt;
 		txt = readfile("example_code.txt");

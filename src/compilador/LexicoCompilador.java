@@ -4,11 +4,11 @@ import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Lexico_Compilador {
+public class LexicoCompilador {
 	int tamPR;
 	ArrayList<String> palabrasReservadas = new ArrayList<String>();
 	ArrayList<String> cadena = new ArrayList<String>();
-	public Lexico_Compilador(){
+	public LexicoCompilador(){
 		
 		palabrasReservadas.addAll(Arrays.asList(
 				"Si", "Entonces", "FinSi",
