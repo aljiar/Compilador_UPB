@@ -5,6 +5,7 @@
 
 .metadata
 tmp/
+bin/
 *.tmp
 *.bak
 *.swp
