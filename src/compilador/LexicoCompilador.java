@@ -27,7 +27,7 @@ public class LexicoCompilador {
         return matcher.find();
 	}
 	public boolean isIdentifier(String word) {
-		 Pattern patron = Pattern.compile("[_a-zA-Z][a-zA-Z0-9]*");
+		 Pattern patron = Pattern.compile("^[a-z][a-zA-Z0-9]*");
          Matcher matcher = patron.matcher(word);
          return matcher.find();
 	}
@@ -66,9 +66,9 @@ public class LexicoCompilador {
   Matcher matcher = patron.matcher(word);
   return matcher.find();
 	}
-	public boolean isComentario2(String word) {
-		 Pattern patron = Pattern.compile("/*[^/]*/");
-  Matcher matcher = patron.matcher(word);
-  return matcher.find();
+	public boolean isSuma(String word) {
+		 Pattern patron = Pattern.compile("^[0-9]\\+?[0-9]");
+		 Matcher matcher = patron.matcher(word);
+		 return matcher.find();
 	}
 }

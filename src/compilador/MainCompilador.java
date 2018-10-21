@@ -37,9 +37,9 @@ public class MainCompilador {
 			} else if (tknCS.isDelimitador(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Delimitador");
 				changed.add(cadena.get(j));
-			} else if (tknCS.isEntero(cadena.get(j))) {
-				System.out.println("N" + " Es Entero");
-				changed.add("N");
+			}else if (tknCS.isSuma(cadena.get(j))) {
+				System.out.println(cadena.get(j) + " Es suma");
+				changed.add(cadena.get(j)); 
 			} else if (tknCS.isCaracterEspecial(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Caracter Especial");
 				changed.add(cadena.get(j));
@@ -54,6 +54,11 @@ public class MainCompilador {
 			} else if (tknCS.isOperador(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Operador");
 				changed.add(cadena.get(j));
+			} else if (tknCS.isEntero(cadena.get(j))) {
+				System.out.println(cadena.get(j) + " Es Entero");
+				changed.add("N");
+			} else {
+				System.out.println(cadena.get(j) + " Definicion invalida");
 			}
 			j = j + 1;
 		}
