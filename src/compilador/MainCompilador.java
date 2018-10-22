@@ -28,10 +28,12 @@ public class MainCompilador {
 		while (j < cadena.size()) {
 			if (tknCS.isKeyword(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es palabra reservada");
+				toSintactico=toSintactico+"System";
 			} else if (tknCS.isSystemKeyWord(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Pal.Res. Libreria System");
 			} else if (tknCS.isComparador(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Comparador");
+				toSintactico=toSintactico+"Comparador";
 			} else if (tknCS.isDelimitador(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Delimitador");
 				toSintactico=toSintactico+cadena.get(j);
@@ -43,19 +45,20 @@ public class MainCompilador {
 				System.out.println(cadena.get(j) + " Es Cadena");
 			} else if (tknCS.isIdentifier(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Identificador");
+				toSintactico=toSintactico+"Identificador";
 			} else if (tknCS.isOperador(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Operador");
-				toSintactico=toSintactico+cadena.get(j);
+				toSintactico=toSintactico+"Operador";
 			} else if (tknCS.isEntero(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Entero");
-				toSintactico=toSintactico+"N";
+				toSintactico=toSintactico+"Entero";
 			} else {
 				System.out.println(cadena.get(j) + " Definicion invalida");
 			}
 			j = j + 1;
 		}
+		System.out.println(toSintactico);
 		boolean res=sintactico.validateRule(toSintactico);
-		System.out.println(toSintactico+" Valido: "+res);
 	}
 	public static String readfile(String path) throws FileNotFoundException,IOException {
 		
