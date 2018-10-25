@@ -4,8 +4,8 @@
 ### Eclipse ###
 
 .metadata
-bin/
 tmp/
+bin/
 *.tmp
 *.bak
 *.swp
@@ -58,10 +58,6 @@ local.properties
 .cache-main
 .scala_dependencies
 .worksheet
-
-### Eclipse Patch ###
-# Eclipse Core
-.project
 
 # JDT-specific (Eclipse Java Development Tools)
 .classpath

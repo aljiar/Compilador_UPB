@@ -1,8 +1,6 @@
-Funcion factorial ( Entero variable )
-	Entero aux = 1
-	Mientras ( variable > 0 )
-		aux = aux * variable
-		variable = variable - 1
-	FinMientras
-	Mostrar ( aux )
+Funcion suma
+Entero var1 = 3
+Entero var2 = 2
+Entero resultado = 0
+resultado = var1 + var2
 FinFuncion
