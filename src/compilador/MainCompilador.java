@@ -1,5 +1,6 @@
 package compilador;
 
+import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,10 +11,10 @@ import java.util.StringTokenizer;
 public class MainCompilador {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-		test();
+		
 	}
 
-	public static void test() throws FileNotFoundException, IOException {
+	public static void test(ActionEvent e) throws FileNotFoundException, IOException {
 		AnalizadorSintactico sintactico = new AnalizadorSintactico();
 		LexicoCompilador tknCS;
 		tknCS = new LexicoCompilador();

@@ -47,12 +47,18 @@ public class Ventana extends JFrame implements ActionListener{
 	
 	public Ventana() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 578, 366);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
 		JButton LexicoButton = new JButton("Lexico");
+		LexicoButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		
+		});
+		
 		menuBar.add(LexicoButton);
 		
 		JButton SintacticoButton = new JButton("Sintactico");
@@ -71,7 +77,7 @@ public class Ventana extends JFrame implements ActionListener{
 				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         
        
-        panel.add(textArea);
+       // panel.add(textArea);
 
         getContentPane().add(scrollPane, BorderLayout.CENTER);
 		
