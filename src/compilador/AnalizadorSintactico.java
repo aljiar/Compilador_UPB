@@ -27,10 +27,10 @@ public class AnalizadorSintactico {
 			while (index < rules.size()) {
 				Pattern patron = Pattern.compile(rules.get(index).getKey());
 				Matcher matcher = patron.matcher(res);
-				if(matcher.find()) {
-					res=res.replace(rules.get(index).getKey(), rules.get(index).getValue());
+				if (matcher.find()) {
+					res = res.replace(rules.get(index).getKey(), rules.get(index).getValue());
 					System.out.println(res);
-				}else {
+				} else {
 					index++;
 				}
 			}

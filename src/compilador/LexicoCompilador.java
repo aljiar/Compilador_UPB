@@ -21,6 +21,7 @@ public class LexicoCompilador {
 	public boolean isKeyword(String word) {
 		return palabrasReservadas.contains(word);
 	}
+
 	public boolean isDataType(String word) {
 		return tipoDato.contains(word);
 	}

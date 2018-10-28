@@ -11,10 +11,10 @@ import java.util.StringTokenizer;
 public class MainCompilador {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-		
+		test();
 	}
 
-	public static void test(ActionEvent e) throws FileNotFoundException, IOException {
+	public static void test() throws FileNotFoundException, IOException {
 		AnalizadorSintactico sintactico = new AnalizadorSintactico();
 		LexicoCompilador tknCS;
 		tknCS = new LexicoCompilador();
@@ -35,10 +35,10 @@ public class MainCompilador {
 			} else if (tknCS.isComparador(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Comparador");
 				toSintactico = toSintactico + "comp";
-			}else if (tknCS.isDataType(cadena.get(j))) {
+			} else if (tknCS.isDataType(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Tipo de Dato");
 				toSintactico = toSintactico + "tipo";
-			}else if (tknCS.isDelimitador(cadena.get(j))) {
+			} else if (tknCS.isDelimitador(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Delimitador");
 				toSintactico = toSintactico + cadena.get(j);
 			} else if (tknCS.isCaracterEspecial(cadena.get(j))) {
