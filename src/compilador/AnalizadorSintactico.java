@@ -4,6 +4,8 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import compilador.Rule;
+
 public class AnalizadorSintactico {
 	private ArrayList<Rule> rules = new ArrayList<Rule>();
 

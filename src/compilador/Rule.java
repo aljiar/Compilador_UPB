@@ -1,5 +1,6 @@
 package compilador;
 
+
 public class Rule {
 	private String key;
 	private String value;
