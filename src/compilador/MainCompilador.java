@@ -33,11 +33,11 @@ public class MainCompilador {
 				toSintactico = toSintactico + "system";
 			} else if (tknCS.isComparador(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Comparador");
-				toSintactico = toSintactico + "comp";
-			}else if (tknCS.isDataType(cadena.get(j))) {
+				toSintactico = toSintactico + cadena.get(j);
+			} else if (tknCS.isDataType(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Tipo de Dato");
 				toSintactico = toSintactico + "tipo";
-			}else if (tknCS.isDelimitador(cadena.get(j))) {
+			} else if (tknCS.isDelimitador(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Delimitador");
 				toSintactico = toSintactico + cadena.get(j);
 			} else if (tknCS.isCaracterEspecial(cadena.get(j))) {
@@ -51,17 +51,16 @@ public class MainCompilador {
 				toSintactico = toSintactico + "ident";
 			} else if (tknCS.isOperador(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Operador");
-				toSintactico = toSintactico + "oper";
+				toSintactico = toSintactico + cadena.get(j);
 			} else if (tknCS.isEntero(cadena.get(j))) {
 				System.out.println(cadena.get(j) + " Es Entero");
-				toSintactico = toSintactico + "ent";
+				toSintactico = toSintactico + "N";
 			} else {
 				System.out.println(cadena.get(j) + " Definicion invalida");
 			}
 			j = j + 1;
 		}
 		System.out.println(toSintactico);
-		sintactico.validateRule(toSintactico);
 	}
 
 	public static String readfile(String path) throws FileNotFoundException, IOException {

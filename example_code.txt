@@ -1,6 +1,1 @@
-Funcion suma
-Entero var1 = 3
-Entero var2 = 2
-Entero resultado = 0
-resultado = var1 + var2
-FinFuncion
+( ( 9 + 5 ) - 10 )
