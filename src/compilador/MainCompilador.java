@@ -1,6 +1,5 @@
 package compilador;
 
-import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
