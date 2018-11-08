@@ -1,5 +1,6 @@
 package UI;
 
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -47,7 +48,7 @@ public class Ventana extends JFrame implements ActionListener{
 	
 	public Ventana() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 578, 366);
+		setBounds(100, 100, 1028, 714);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -87,12 +88,13 @@ public class Ventana extends JFrame implements ActionListener{
 		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
+		panel.setLayout(new BorderLayout(0, 0));
 		panel.add(textArea);
-		contentPane.add(panel, BorderLayout.CENTER);
+		contentPane.add(panel);
 		
 		
 	}

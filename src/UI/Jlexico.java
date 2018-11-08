@@ -1,7 +1,10 @@
 package UI;
 
+
 import java.awt.BorderLayout;
+
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -11,6 +14,7 @@ import javax.swing.border.LineBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import compilador.MainCompilador;
+
 import compilador.Archivo;
 
 import javax.swing.JTextArea;
@@ -30,26 +34,21 @@ import java.io.IOException;
 import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
 
-public class Jlexico extends JFrame {
 
+public class Jlexico extends JFrame implements ActionListener {
+
+	public String direccion = "";
+	public JPanel contentPane;
 	
-	private JPanel contentPane;
+	JTextArea textArea = new JTextArea();
+	public JTextArea textArea_1 ;
+	public JButton btnValidar;
+	public JButton btnSintactico;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Jlexico frame = new Jlexico();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the frame.
@@ -57,7 +56,7 @@ public class Jlexico extends JFrame {
 	public Jlexico() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 727, 443);
+		setBounds(100, 100, 1018, 681);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -69,22 +68,22 @@ public class Jlexico extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		lblNewLabel.setBounds(173, 11, 259, 27);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 32));
+		lblNewLabel.setBounds(281, 13, 284, 44);
 		lblNewLabel.setText("Analizador Lexico");
 		
 		panel.add(lblNewLabel);
 		
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(10, 60, 226, 289);
+
+		textArea.setBounds(10, 60, 323, 458);
 		textArea.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		panel.add(textArea);
 		
 		//Boton Validar
-		JButton btnValidar = new JButton("Validar");
+		btnValidar = new JButton("Validar");
 		btnValidar.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnValidar.setBounds(260, 300, 97, 27);
+		btnValidar.setBounds(366, 277, 117, 39);
 		btnValidar.setForeground(Color.BLUE);
 		btnValidar.setBackground(Color.WHITE);
 		btnValidar.setBorder(BorderFactory.createLineBorder(Color.BLUE,2));
@@ -99,8 +98,8 @@ public class Jlexico extends JFrame {
 	
 		
 		//Creacion de text Area
-		JTextArea textArea_1 = new JTextArea();
-		textArea_1.setBounds(367, 60, 259, 289);
+		textArea_1 = new JTextArea();
+		textArea_1.setBounds(532, 60, 385, 458);
 		textArea_1.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		
 		
@@ -109,21 +108,16 @@ public class Jlexico extends JFrame {
 		
 		//Boton cargar
 		JButton btnCargar = new JButton("Cargar");
-		btnCargar.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnCargar.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		btnCargar.setForeground(Color.green);
 		btnCargar.setBackground(Color.white);
 		btnCargar.setBorder(BorderFactory.createLineBorder(Color.green,2));
 		
-		btnCargar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			
-			Archivo a= new Archivo();
-			a.Abrir(e);
-			//textArea_1.setText(contenido);
-			}
-		});
 		
-		btnCargar.setBounds(260, 59, 89, 23);
+		 
+	
+		btnCargar.addActionListener(this);
+		btnCargar.setBounds(362, 84, 121, 39);
 		panel.add(btnCargar);
 		
 		
@@ -139,10 +133,45 @@ public class Jlexico extends JFrame {
 		btnAtras.setBackground(Color.white);	
 		btnAtras.setBorder(BorderFactory.createLineBorder(Color.red,2));
 		
-		btnAtras.setBounds(20, 360, 103, 34);
+		btnAtras.setBounds(24, 547, 103, 34);
 		panel.add(btnAtras);
 		
+		btnSintactico = new JButton("Sintactico");
+		btnSintactico.setBounds(846, 554, 97, 25);
+		panel.add(btnSintactico);
+		
+		
+		
+		
 	}
+	
+	 @Override
+	   public void actionPerformed(ActionEvent e) { 
+	    	
+	    	JFileChooser fileChooser = new JFileChooser();
+	        fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+	        
+	        FileNameExtensionFilter imgFilter = new FileNameExtensionFilter("TEXT FILES", "txt", "text"); 
+	       
+
+	        int result = fileChooser.showOpenDialog(this);
+
+	        if (result != JFileChooser.CANCEL_OPTION) {
+
+	            File fileName = fileChooser.getSelectedFile();
+
+	            if ((fileName == null) || (fileName.getName().equals(""))) {
+	                
+	            } else {
+	            	System.out.println(direccion);
+	            	direccion = fileName.getAbsolutePath();
+	            	System.out.println(direccion);
+	            	String contenido = getArchivo( direccion );
+	            	textArea.setText( contenido );
+	                //txt.setText(fileName.getAbsolutePath());
+	            }
+	        }
+	    }
 	   public String getArchivo( String ruta ){
 	        FileReader fr = null;
 	        BufferedReader br = null;
@@ -169,5 +198,4 @@ public class Jlexico extends JFrame {
 	        }
 	        return contenido;
 	    }
-
 }
